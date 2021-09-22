@@ -12,4 +12,6 @@ public interface EmployeeServiceInterface {
 
 	public Employee getEmpById(Long empidL);
 
+	public void deleteEmpById(Long empidL);
+
 }

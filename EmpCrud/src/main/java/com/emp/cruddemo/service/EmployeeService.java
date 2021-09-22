@@ -31,4 +31,10 @@ public class EmployeeService implements EmployeeServiceInterface {
 		// TODO Auto-generated method stub
 		return crudRepo.findById(empidL).get();
 	}
+
+	@Override
+	public void deleteEmpById(Long empidL) {
+		crudRepo.deleteById(empidL);
+		
+	}
 }
