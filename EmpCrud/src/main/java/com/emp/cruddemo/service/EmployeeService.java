@@ -2,15 +2,19 @@ package com.emp.cruddemo.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.emp.cruddemo.controller.EmployeeController;
 import com.emp.cruddemo.entity.Employee;
 import com.emp.cruddemo.repos.EmployeeCrudRepo;
+import com.emp.cruddemo.utility.GlobalResources;
 
 @Service
 public class EmployeeService implements EmployeeServiceInterface {
 
+	private Logger logger=GlobalResources.getLogger(EmployeeService.class);
 	@Autowired
 	private EmployeeCrudRepo crudRepo;
 
@@ -23,6 +27,8 @@ public class EmployeeService implements EmployeeServiceInterface {
 
 	@Override
 	public List<Employee> getAllEmployee() {
+		String methodName="getAllEmployee()";
+		logger.info(methodName+"called");
 		return crudRepo.findAll();
 	}
 
